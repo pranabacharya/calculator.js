@@ -19,7 +19,7 @@
             margin: 0 auto;
             border-radius: 8px;
             width: 300px;
-            height: 426px;
+            height: 428px;
         }
         .answer-plate {
             height: 65px;
@@ -33,7 +33,8 @@
             overflow: auto;
         }
         button {
-            padding: 10px;
+            padding: 12px;
+            text-align: center;
             font-size: 25px;
             width: 25%;
             outline: none;
@@ -49,6 +50,20 @@
             display: flex;
             flex-wrap: wrap;
         }
+        .clear, .equal {
+            width:50%;
+        }
+        .clear, .equal, .cl {
+            background-color: rgb(113, 15, 15);
+            color: white;
+            font-weight: 500;
+        }
+        .clear {
+            border-radius: 0px 0 0px 8px;
+        }
+        .equal {
+            border-radius: 0px 0 8px 0;
+        }
     </style>
 </head>
 <body>
@@ -56,8 +71,8 @@
         <div class="calculator box">
             <div class="answer-plate"></div>
             <div class="all-controls">
-                <button class="clear" data-clear value="AC">AC</button>
-                <button class="equal" value="="> =</button>
+                <button class="cl" data-cl value="clear">C</button>
+                <button class="dot" data-control value=".">.</button>
                 <button class="add" data-control value="+">+</button>
                 <button class="sub" data-control value="-">-</button>
                 <button class="mul" data-control value="*">&#215;</button>
@@ -72,8 +87,8 @@
                 <button data-num value="8">8</button>
                 <button data-num value="9">9</button>
                 <button data-num value="0">0</button>
-                <button data-cl style="width:50%;border-radius: 0px 0 0px 8px;" value="clear">C</button>
-                <button class="dot" style="border-radius: 0px 0 8px 0; width:50%" data-control value=".">.</button>
+                <button class="clear" data-clear value="AC">AC</button>
+                <button class="equal" value="="> =</button>
             </div>
         </div>
     </div>
