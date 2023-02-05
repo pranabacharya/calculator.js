@@ -31,6 +31,11 @@
         displayCalcData(num)
     })
     function displayCalcData(data){
+        if(data === "Infinity"){
+            setTimeout(()=> {
+                displayCalcData("");
+            },3000)
+        }
         displayItem.innerText = data;
     }
 
@@ -39,9 +44,9 @@
         try{
             answer = eval(data.replace("÷","/").trim());
             if(answer % 1 !== 0){
-                displayItem.innerText = answer.toFixed(3);
+                displayCalcData(answer.toFixed(3));
             }else{
-                displayItem.innerText = answer;
+                displayCalcData(answer);
             }
         }catch(e){
             displayCalcData(e.name);
