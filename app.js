@@ -34,6 +34,7 @@
         if(data === "Infinity"){
             setTimeout(()=> {
                 displayCalcData("");
+                num = "";
             },3000)
         }
         displayItem.innerText = data;
