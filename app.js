@@ -5,7 +5,7 @@
         item.addEventListener('click', e => {
             e.preventDefault();
             num +=""+e.target.value;
-            displayCalcData(num.trim());
+            displayCalcData(num);
         })
     });
     document.querySelectorAll("button[data-control]").forEach(item => {
@@ -13,7 +13,7 @@
             e.preventDefault();
             if(num.charAt(num.length-1) !== e.target.value){
                 num+=e.target.value;
-                displayCalcData(num.trim());
+                displayCalcData(num);
             }
         })
     });
@@ -45,7 +45,9 @@
         try{
             answer = eval(data.replace("÷","/").trim());
             if(answer % 1 !== 0){
-                displayCalcData(answer.toFixed(3));
+                num = answer.toFixed(3);
+                displayCalcData(num);
+                // console.log(num, answer)
             }else{
                 displayCalcData(answer);
             }
@@ -56,6 +58,6 @@
                 num="";
             }, 3000);
         }
-        return answer;
+        return num;
     }
 })();
