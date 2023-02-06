@@ -15,14 +15,14 @@
         .container {
             margin-top: 50px;
         }
-        .calculator {
+        .calculator-box {
             margin: 0 auto;
             border-radius: 8px;
             width: 300px;
             height: 428px;
         }
         .answer-plate {
-            height: 65px;
+            height: 60px;
             padding: 35px 10px;
             background-color: rgb(204, 29, 29);
             border-radius: 8px 8px 0 0;
@@ -33,7 +33,7 @@
             overflow: auto;
         }
         button {
-            padding: 12px;
+            padding: 15px;
             text-align: center;
             font-size: 25px;
             width: 25%;
@@ -41,10 +41,11 @@
             border: none;
             background-color: rgba(165, 42, 42, 0.765);
             opacity: 1;
-            transition: opacity 10ms linear;
+            transition: opacity 20ms linear;
+            user-select: none;
         }
         button:active {
-            opacity: .7;
+            opacity: .5;
         }
         .all-controls {
             display: flex;
@@ -64,11 +65,23 @@
         .equal {
             border-radius: 0px 0 8px 0;
         }
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2c8a00;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgb(47, 10, 255);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(4, 1, 52);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="calculator box">
+        <div class="calculator-box">
             <div class="answer-plate"></div>
             <div class="all-controls">
                 <button class="cl" data-cl value="clear">C</button>
